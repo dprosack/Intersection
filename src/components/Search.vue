@@ -98,8 +98,8 @@
 		<template v-if="searchResults.length" >
 			<div id="searchRes">
 				<div v-for="res in searchResults" :key="res" @click="selectRoute(res)" @mouseenter="highliteRoad(res)" @mouseleave="removeHighlight('line')" style="display:flex; flex-direction: row; justify-content: space-between;">
-					<span>{{ res.properties.RTE_DEFN_LN_NM }}</span>
-					<span style="font-style: italic;">Range {{res.properties.RTE_DEFN_LN_BEGIN_DFO_MS}} - {{res.properties.RTE_DEFN_LN_END_DFO_MS}}</span>
+					<span>{{ res.properties.RTE_NM }}</span>
+					<span style="font-style: italic;">Range {{res.properties.BEGIN_DFO}} - {{res.properties.END_DFO}}</span>
 				</div>
 			</div>
 
@@ -202,9 +202,9 @@
 				}
 				removeHighlight("line")
 				removeAllHighlights()
-				rte.value = road.properties.RTE_DEFN_LN_NM
-				dfoSearchBeginDFO = road.properties.RTE_DEFN_LN_BEGIN_DFO_MS
-				dfoSearchEndDFO = road.properties.RTE_DEFN_LN_END_DFO_MS
+				rte.value = road.properties.RTE_NM
+				dfoSearchBeginDFO = road.properties.BEGIN_DFO
+				dfoSearchEndDFO = road.properties.END_DFO
 				searchResults.value.length = 0;
 				showDfoRange.value = true
 				dfoRange.value = {bool: true, text: `DFO Range: ${dfoSearchBeginDFO} - ${dfoSearchEndDFO}`}
@@ -636,4 +636,5 @@
 	border: 2px solid red;
 }
 </style>
+
 
