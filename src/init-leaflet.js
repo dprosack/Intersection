@@ -349,10 +349,9 @@ export function returnIntAppchLegs(intsectId){
 
 export async function returnRoadNames(rdName){
 	try{
-		//https://txdot4avpta01/geoserver/TppDmMap/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=TppDmMap%3ARteDefnLn_7604&maxFeatures=10&outputFormat=application%2Fjson
 		let encodeURI = encodeURIComponent(`RTE_NM like '%${rdName}%'`)
 		
-		let roadNames = await fetch(`https://services.arcgis.com/KTcxiTD9dsQw4r7Z/ArcGIS/rest/services/TxDOT_Roadways/FeatureServer/0/query?where=${encodeURI}&geometryType=esriGeometryEnvelope&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=%22*%22&returnGeometry=true&returnEnvelope=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&returnAggIds=false&returnZ=false&returnM=false&returnTrueCurves=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pgeojson`)
+		let roadNames = await fetch(`https://services.arcgis.com/KTcxiTD9dsQw4r7Z/ArcGIS/rest/services/TxDOT_Roadways/FeatureServer/0/query?where=${encodeURI}&geometryType=esriGeometryEnvelope&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=%22*%22&returnGeometry=true&returnEnvelope=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&returnAggIds=false&returnZ=false&resultRecordCount=5&returnM=false&returnTrueCurves=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pgeojson`)
 
 		let roads = await roadNames.json()
 		return roads
@@ -561,6 +560,7 @@ export function turnLabelsOff(){
 	labelsLGroup.clearLayers()
 	return
 }
+
 
 
 
