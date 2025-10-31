@@ -1,0 +1,257 @@
+
+*{
+	margin: 0px;
+	font-family: Verdana, sans-serif;
+}
+.material-icons:hover, .material-symbols-outlined:hover{
+	color: #0056A9 !important;
+	cursor: pointer;
+	filter: brightness(150%) !important;
+}
+#map{
+	height: calc(100vh - 46px);
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+table, th, td {
+	border: 1px solid black;
+	flex-direction: column;
+}
+
+input{
+	padding: 5px 2px;
+}
+
+.inlet-header{
+	font-weight: bold;
+	font-size: 16px;
+	border-bottom: 1px solid #0056A9;
+	width: fit-content;
+}
+
+.inlet-body{
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.inlet-title{
+	font-size: 16px;
+	border-bottom: 1px solid #0056A9;
+}
+
+.disabled-button{
+	cursor: default !important;
+	background: rgba(128, 128, 128, .2) !important;
+	padding: 2.5px;
+	border: none;
+	padding: 3px 15px 3px 15px;
+	position: relative;
+	border: 1px solid #0056A9;
+	color: #0056A9 !important; 
+}
+.main-button{
+	background-color: #0056A9;
+	color: white;
+	padding: 2.5px;
+	border: none;
+	padding: 3px 15px 3px 15px;
+	position: relative;
+	border: 1px solid #0056A9;
+}
+.main-button:hover{
+	background-color: hsl(209, 100%, 27%)
+}
+
+.main-button:active{
+	outline: 2px solid white;
+	outline-offset: -3px;
+}
+
+.secondary-button:active{
+	outline: 2px solid #0056A9;
+	outline-offset: -3px;
+	border: 1px solid white;
+}
+
+.main-button:hover, .secondary-button:hover{
+	cursor: pointer;
+}
+
+.secondary-button{
+	background-color: white;
+	border: 1px solid #0056A9;
+	color: #0056a9;
+	padding: 3px 15px 3px 15px;
+}
+
+.list_item{
+	height: 10px;
+	width: 100%;
+	padding-bottom: 4.5px;
+	font-size: 9px;
+	display: inline-block;
+}
+.list_item:hover{
+	background-color: rgba(9,86,169,.5);
+	cursor: pointer;
+}
+.list-item-div{
+	display: flex; 
+	flex-direction: column;
+	position: relative; 
+	width: calc(100% - 10px); 
+	font-size: 10px;
+	padding-top: 5px;
+}
+.item-route{
+	position: relative;
+	float: right;
+	bottom: 2px;
+}
+
+img{
+	position: relative;
+	top: 4.5px;
+}
+
+span{
+	position: relative;
+}
+
+.material-icons:hover{
+	cursor: pointer;
+	color: green;
+	filter: brightness(150%) !important;
+}
+.material-icons{
+	font-size: 15px !important;
+}
+
+.popup{
+	position: absolute;
+	background: rgb(9, 86, 169);
+	padding: 10px;
+	border-radius: 6px;
+	color: white;
+}
+
+.leaflet-popup-content-wrapper{
+	background: none !important;
+	color: none !important;
+	box-shadow: none !important;
+}
+.leaflet-popup-tip-container{
+	display: none;
+}
+.leaflet-popup-content b{
+	border-radius: 50px;
+  	padding: 0px 2px 0px 2px;
+	background-color: white;
+}
+
+.underline_list{
+	display: block; 
+	width: 100%; 
+	border-bottom: 1px solid #DADEE5; 
+	padding-top: 3px;
+}
+
+@media (max-width: 1280px){
+	.inlet-header{
+		font-size: 13px !important;
+	}
+	.inlet-title{
+		font-size: 13px !important;
+	}
+	input{
+		padding: 2px 2px;
+	}
+	.secondary-button{
+		padding: 3px 10px 3px 10px;
+	}
+	.main-button{
+		padding: 3px 10px 3px 10px;
+	}
+}
+
+.highlightRow{
+	background-color: rgba(9,86,169,.5);
+}
+
+.diamond {
+	width: 0;
+	height: 0;
+	border: 50px solid transparent;
+	border-bottom-color: red;
+	position: relative;
+	top: -50px;
+}
+.diamond:after {
+	content: '';
+	position: absolute;
+	left: -50px;
+	top: 50px;
+	width: 0;
+	height: 0;
+	border: 50px solid transparent;
+	border-top-color: red;
+}
+
+.lineTransition{
+	/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+	stroke-dasharray: 10,10;
+  	stroke-dashoffset: 180;
+  	animation-duration: 20s;
+  	animation-name: move;
+  	animation-iteration-count: infinite;
+  	animation-direction: reverse;
+  	animation-timing-function: linear;
+  	opacity: 1;
+}
+
+@keyframes move {
+  from{
+	stroke-dashoffset: 780;
+  }
+  to{
+	stroke-dashoffset:0;
+  }
+}
+
+.labelDisabled {
+	color: grey;
+	cursor: default;
+}
+
+.flashPoint{
+	animation: flash linear infinite 5s;
+	animation-fill-mode: forwards;
+	/* animation-iteration-count: infinite; */
+}
+
+@keyframes flash {
+	0% {
+		fill: yellow;
+		box-shadow: 10px 5px 5px yellow;
+	}
+	50%{
+		fill: Pink;
+	}
+	100%{
+		fill: black;
+	}
+}
+
+.label {
+    font-weight: 700;
+	text-transform: uppercase;
+    text-align: center;
+    margin-top: -1em;
+}
+
+.turn-labels-off{
+	display: none !important;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "txdot_intersection",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cyclomedia/streetsmart-api": "^25.2.0-rc.3",
+    "@iconoir/vue": "^7.10.1",
+    "esri-leaflet": "^3.0.14",
+    "esri-leaflet-vector": "^4.2.7",
+    "leaflet": "^1.9.4",
+    "leaflet-streetlabels": "^1.0.5",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5"
+  }
+}
