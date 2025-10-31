@@ -1,0 +1,49 @@
+name: Intersection ESRI
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:        
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Check out repo code"
+        uses: actions/checkout@v2
+      - name: "setup nodejs"
+        uses: actions/setup-node@v3
+        env: 
+          GH_TOKEN: ${{secrets.MY_TOKEN}}
+        with:
+          node-version: '24'
+      - name: "Node Version"
+        run: node --version
+      - name: "NPM Version"
+        run: npm --version
+
+      - name: "install npm packages"
+        run: npm install
+        
+      - name: "Run Build"
+        run: npm run build
+        
+      - name: "Upload Build Files"
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    needs: build
+    environment:
+      name: "github pages"
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: "ubuntu-latest"
+    
+    steps:
+      - name: "Deploy to Github Pages"
+        id: deployment
+        uses: actions/deploy-pages@v4
+      
