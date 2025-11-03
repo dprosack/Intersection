@@ -1,15 +1,17 @@
 <template>
 	<div>
+		<StreetSmart/>
 		<Map/>
 	</div>
 </template>
 
 <script>
 	import Map from './components/Map.vue'	
+	import StreetSmart from './components/StreetSmart.vue';
 	
 	export default{
 		name: "App",
-		components: {Map}
+		components: {StreetSmart, Map}
 	}
 	
 </script>
@@ -29,3 +31,4 @@
 
 
 </style>
+
