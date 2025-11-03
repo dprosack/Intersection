@@ -3,6 +3,16 @@ import {VectorTileLayer} from 'esri-leaflet-vector'
 import { FeatureLayer } from 'esri-leaflet';
 import { StreetSmartApi } from "@cyclomedia/streetsmart-api";
 
+export let updateKeys = (k,u,p) => {
+	key = k
+	username = u
+	password = p
+	return
+}
+let key;
+let username;
+let password;
+
 export let currMap;
 export let spiderLine = [];
 export let marker = [];
@@ -439,15 +449,15 @@ export function drawIntersectionBuffer(coords, currBuffer){
 export function initStreetSmartApi(currPtLoc){
 	const initCycloViewerOptions = {
 		targetElement: document.getElementById('streetsmartApi'),
-		username: "hallo",
-		password: "psswrd",
+		username: username,
+		password: password,
 		srs: "EPSG:3081",
-		apiKey: "apiKey",
+		apiKey: key,
 		locale: "en-US",
 		overlayDrawDistance: 30,
 		addressSettings: {
 			locale: "us",
-			database: ""
+			database: "Nokia"
 		}
 	}
 
@@ -560,6 +570,7 @@ export function turnLabelsOff(){
 	labelsLGroup.clearLayers()
 	return
 }
+
 
 
 
