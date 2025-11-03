@@ -1,11 +1,11 @@
 <template>
     <oiv id="streetSmartLogin">
         <span>Key:</span>
-        <input v-model="loginKey"></input>
+        <input v-model="loginKey" type="password"></input>
         <span>Username:</span>
-        <input v-model="loginUsername"></input>
+        <input v-model="loginUsername" type="password"></input>
         <span>Password:</span>
-        <input v-model="loginPassword"></input>
+        <input v-model="loginPassword" type="password"></input>
         <div id="streetSmartButtonDiv">
             <button class="main-button" @click="cancelCred()">
                 Cancel
@@ -73,4 +73,5 @@
     justify-content: space-between;
     padding-top: 10px;
 }
+
 </style>
