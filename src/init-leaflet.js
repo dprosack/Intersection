@@ -75,7 +75,7 @@ export const roads = new VectorTileLayer("https://tiles.arcgis.com/tiles/KTcxiTD
 	pane: "roads"
 })
 
-export const brdge = new VectorTileLayer("https://tiles.arcgis.com/tiles/KTcxiTD9dsQw4r7Z/arcgis/rest/services/Intersection_Bridge_VT/VectorTileServer", {
+export const brdge = new VectorTileLayer("https://tiles.arcgis.com/tiles/KTcxiTD9dsQw4r7Z/arcgis/rest/services/Intersection_Bridge_VT_OSM/VectorTileServer", {
 	preserveDrawingBuffer: false,
 	pane: "bridgePane",
 	style: (bvt) => {
@@ -570,6 +570,7 @@ export function turnLabelsOff(){
 	labelsLGroup.clearLayers()
 	return
 }
+
 
 
 
